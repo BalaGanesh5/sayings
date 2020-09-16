@@ -20,7 +20,7 @@ const Card = ({ advice, onClick }) => {
                 style={{ transform: props.xys.interpolate(trans) }}
             >
                 <h3 className="advice">{advice}</h3>
-                <ParticlesBg  num={30}  life={1} type="cobweb" radius={1} bg={true} />
+                <ParticlesBg  num={20}  type="cobweb" radius={1} bg={true} />
             </a.div>
            
             <a.div
@@ -28,7 +28,8 @@ const Card = ({ advice, onClick }) => {
              onMouseLeave={() => sets({ xys: [0, 0, 1] })}
              style={{ transform: prop.xys.interpolate(trans) }}
             >
-                <button className="button" onClick={onClick}>Moon<br/>Sayings
+                <button className="button" 
+                onClick={onClick}>Moon<br/>Sayings
                  </button>
             </a.div>
 
