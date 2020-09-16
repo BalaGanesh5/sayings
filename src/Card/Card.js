@@ -2,6 +2,8 @@ import React from 'react'
 import { useSpring, a } from 'react-spring';
 import ParticlesBg from "particles-bg"
 import './Card.css';
+import MouseParticles from "react-mouse-particles";
+
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1]
 const trans = (x, y, s) => `perspective(900px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
@@ -20,7 +22,7 @@ const Card = ({ advice, onClick }) => {
                 style={{ transform: props.xys.interpolate(trans) }}
             >
                 <h3 className="advice">{advice}</h3>
-                <ParticlesBg  num={20}  type="cobweb" radius={1} bg={true} />
+                <ParticlesBg  num={4}  type="circle" radius={2} bg={true} />
             </a.div>
            
             <a.div
@@ -31,8 +33,9 @@ const Card = ({ advice, onClick }) => {
                 <button className="button" 
                 onClick={onClick}>Moon<br/>Sayings
                  </button>
+                 <MouseParticles g={0} life={2} num={2} color="random" cull="button" level={3} />
             </a.div>
-
+           
         </div>
     )
 }
