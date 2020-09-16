@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+import Card from "./Card/Card"
 import './App.css';
+import ParticlesBg from 'particles-bg'
 
-function App() {
+class App extends React.Component{
+
+  state = {advice:""}
+  
+
+componentDidMount(){
+  this.fetchAdvice();
+}
+
+fetchAdvice = async() => {
+  axios.get ('https://api.adviceslip.com/advice')
+  .then((res)=> {
+    const {advice} = res.data.slip;
+    this.setState({
+      advice:advice,
+    })
+  })
+  .catch((err)=> {
+    console.log(err)
+  })
+}
+
+  
+render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card  advice={this.state.advice}
+      onClick={this.fetchAdvice}
+      />
+     
     </div>
   );
+}
 }
 
 export default App;

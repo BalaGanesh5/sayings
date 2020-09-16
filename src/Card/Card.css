@@ -1,0 +1,50 @@
+
+
+
+
+
+.card {
+  width: 45ch;
+  height: 45ch;
+  background:rgba(252, 237, 237, 0.3);
+  border-radius: 2px;
+  
+  background-position: center center;
+  box-shadow: 0px 10px 30px -5px rgba(71, 71, 71, 0.13);
+  transition: box-shadow 0.1s;
+  will-change: transform;
+  border: 10px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card:hover {
+  box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+}
+
+.advice{
+    position: absolute;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button{
+  margin: 3rem 9rem;
+  overflow: visible;
+  transform-origin: 50% 50% 0px;
+  border-radius: 5px;
+  color: white;
+  padding: 1em 2em;
+  font-size: 14.5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+background: linear-gradient(135deg, #f0d365 0%, #fda085 100%);
+}
+
+.button:hover {
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+  }
